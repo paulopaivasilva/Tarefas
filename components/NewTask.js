@@ -4,14 +4,16 @@ import React, { Component } from 'react'
 import { Modal, View, Image, Text, StyleSheet } from 'react-native';
 
 export default class NewTask extends Component {
-    state = {
-        modal: this.props.modal
+    constructor(props){
+        super(props)
+        this.state = {
+            modal: this.props.modal
+        }
     }
     render(){
-        console.log(this.state.modal)
         return(
-            <Modal visible={this.props.modal} animationType="slide" 
-                    onRequestClose={() => this.visibleModal(false)  }>
+            <Modal visible={this.state.modal} animationType="slide" 
+                    onRequestClose={() => this.navigation.pop()}>
                 <View>
                     <Text>
                         Teste
