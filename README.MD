@@ -1,0 +1,4 @@
+- npm install -g @ionic/cli
+- npm install -g cordova
+- npm install
+- ionic serve
