@@ -1,0 +1,8 @@
+{
+  "name": "Tarefas",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

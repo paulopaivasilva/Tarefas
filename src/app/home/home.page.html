@@ -1,0 +1,15 @@
+<ion-header [translucent]="true">
+   <ion-toolbar>
+      <ion-title>
+         Tarefas
+      </ion-title>
+   </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+   <ion-text>
+      <h3 class="title">Hoje</h3>
+   </ion-text>
+   <app-card [tasks]="tasks"></app-card>
+</ion-content>
+<ion-button color="primary" (click)="callModal()" type="submit" size="full" style="height: 4em;">Adicionar Tarefa</ion-button>

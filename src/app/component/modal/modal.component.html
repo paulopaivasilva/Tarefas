@@ -1,0 +1,28 @@
+<form (ngSubmit)="addTask()">
+  <ion-item>
+    <ion-label position="floating">Title*</ion-label>
+    <ion-input type="text" [(ngModel)]="task.title" name="title"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Descrição</ion-label>
+    <ion-input [(ngModel)]="task.description" name="description"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Dia da Semana*</ion-label>
+    <ion-select [(ngModel)]="task.day" [ngModelOptions]="{standalone: true}">
+      <ion-select-option>Selecione</ion-select-option>
+      <ion-select-option *ngFor="let day of daysOfWeek" [value]="day">{{day}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Horário*</ion-label>
+    <ion-datetime
+      display-format="HH:mm" picker-format="HH:mm" 
+      [value]="hour" [(ngModel)]="task.hour" [ngModelOptions]="{standalone: true}">{{hour}}</ion-datetime>
+  </ion-item>
+  <ion-button color="primary" type="submit" size="full">Adicionar Tarefa</ion-button>
+  <ion-button color="danger" (click)="dismiss()" size="full">Cancelar</ion-button>
+  <ion-text style="text-align: center;" color="danger" *ngIf="errors">
+    <p>{{errors}}</p>
+  </ion-text>
+</form>
