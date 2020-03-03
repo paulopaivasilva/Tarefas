@@ -1,10 +1,10 @@
 <ng-container *ngIf="tasks.length > 0">
-   <ion-card class="card" *ngFor="let task of tasks">
+   <ion-card class="card" *ngFor="let task of tasks" (click)="checkTask(task.id)">
       <ion-card-content>
          <ion-grid>
             <ion-row>
                <ion-col size="1.5">
-                  <ion-checkbox></ion-checkbox>
+                  <ion-checkbox [checked]="task.status"></ion-checkbox>
                </ion-col>
 
                <ion-col>

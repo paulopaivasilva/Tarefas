@@ -25,8 +25,8 @@ export class HomePage implements OnInit {
 
   private getTasks (){
     this.tasks.push(
-      {title: "Limpar a casa", description: null, hour: "09:00", day: "Segunda-feira", status: false},
-      {title: "Trocar a areia do gato", description: null, hour: "12:00", day: "Sábado", status: false}
+      {id: '1', title: "Limpar a casa", description: null, hour: "09:00", day: "Segunda-feira", status: false},
+      {id: '2', title: "Trocar a areia do gato", description: null, hour: "12:00", day: "Sábado", status: false}
     )
   }
 }

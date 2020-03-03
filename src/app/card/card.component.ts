@@ -28,4 +28,12 @@ export class CardComponent implements OnInit {
 
   ngOnInit() {}
 
+  checkTask(id){
+    this.tasks.map(item => {
+      if(item.id === id){
+        item.status = !item.status
+      }
+    })
+  }
+
 }
