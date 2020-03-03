@@ -10,6 +10,9 @@
    <ion-text>
       <h3 class="title">Hoje</h3>
    </ion-text>
-   <app-card [tasks]="tasks"></app-card>
+   <app-card *ngIf="tasks.length > 0" [tasks]="tasks"></app-card>
+   <ion-text *ngIf="tasks.length == 0" style="color: #222428">
+      <p>Não há tarefas para hoje, adicione uma!</p>
+   </ion-text>
 </ion-content>
-<ion-button color="primary" (click)="callModal()" type="submit" size="full" style="height: 4em;">Adicionar Tarefa</ion-button>
+<ion-button (click)="callModal()" type="submit" size="full" style="height: 4em">Adicionar Tarefa</ion-button>

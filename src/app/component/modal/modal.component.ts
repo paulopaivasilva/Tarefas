@@ -30,11 +30,12 @@ export class ModalComponent implements OnInit {
   ngOnInit() {}
 
   dismiss(){
-    this.modal.dismiss(console.log("Fechou"))
+    this.modal.dismiss()
   }
 
   addTask(){
     this.task.hour = moment(this.task.hour).format('HH:mm')
+    this.task[status] = false;
     if(this.task.title == "" || this.task.hour == "" || this.task.hour == "Invalid date" || this.task.day == ""){
       this.errors = "Os campos obrigatórios não podem ficar em branco"
     }else{

@@ -30,8 +30,8 @@ export class CardComponent implements OnInit {
 
   checkTask(id){
     this.tasks.map(item => {
-      if(item.id === id){
-        item.status = !item.status
+      if(item[id] === id){
+        //item.status = !item[status]
       }
     })
   }
