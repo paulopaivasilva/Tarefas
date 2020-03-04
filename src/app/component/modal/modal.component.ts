@@ -23,7 +23,7 @@ export class ModalComponent implements OnInit {
 
   constructor(private modal: ModalController, private storage: Storage) { }
 
-  task = {title: "", description: null, hour: "", day: ""}
+  task = { id: "", title: "", description: null, hour: "", day: "", status: false }
   daysOfWeek = ["Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado", "Domingo"]
   errors = null
 
@@ -35,7 +35,7 @@ export class ModalComponent implements OnInit {
 
   addTask(){
     this.task.hour = moment(this.task.hour).format('HH:mm')
-    this.task[status] = false;
+    this.task.id = this.makeID()
     if(this.task.title == "" || this.task.hour == "" || this.task.hour == "Invalid date" || this.task.day == ""){
       this.errors = "Os campos obrigatórios não podem ficar em branco"
     }else{
@@ -50,6 +50,16 @@ export class ModalComponent implements OnInit {
       })
       this.dismiss()
     }
+  }
+
+  makeID() {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  
+    for (var i = 0; i < 12; i++)
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+  
+    return text;
   }
 
 }

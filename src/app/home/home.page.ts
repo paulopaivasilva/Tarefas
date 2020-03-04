@@ -10,6 +10,8 @@ import 'moment/locale/pt-br';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
+
+
 export class HomePage implements OnInit {
 
   constructor(public modal: ModalController, private storage: Storage) {}
@@ -27,14 +29,13 @@ export class HomePage implements OnInit {
     this.getTasks()
   }
 
-  private getTasks (){
+  public getTasks (){
     this.tasks = []
     this.storage.get('tasks').then((item) => {
       if(item){
         item.map((task, i) => {
           task = JSON.parse(task)
           if(task.day == moment().format('dddd')){
-            task.id = i
             this.tasks.push(task)
           }
         })
